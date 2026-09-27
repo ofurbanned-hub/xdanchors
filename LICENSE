@@ -1,0 +1,5 @@
+GPL-3.0-or-later
+
+This project uses a Maple-inspired pathfinding design. The uploaded StylexTV/Maple
+source was inspected as a reference; this 1.21.11 implementation is a new client
+implementation rather than a drop-in build of the original 1.18.1 source.

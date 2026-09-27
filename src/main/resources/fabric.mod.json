@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "anchor-rtp-bot",
+  "version": "${version}",
+  "name": "Anchor RTP Bot",
+  "description": "Client-side respawn-anchor automation with Maple-inspired voxel pathfinding.",
+  "authors": ["ofurbanned-hub"],
+  "license": "GPL-3.0-or-later",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.anchorbot.AnchorRtpBotClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.18.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
