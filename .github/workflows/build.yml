@@ -1,27 +1,25 @@
-name: Build Anchor RTP Bot
+name: build
 
 on:
-  workflow_dispatch:
   push:
-    branches:
-      - main
+  pull_request:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Java 21
+      - name: Setup Java
         uses: actions/setup-java@v4
         with:
-          distribution: temurin
           java-version: '21'
+          distribution: 'microsoft'
 
       - name: Make Gradle executable
-        run: chmod +x gradlew
+        run: chmod +x ./gradlew
 
       - name: Build
         run: ./gradlew build --no-daemon
@@ -29,5 +27,5 @@ jobs:
       - name: Upload JAR
         uses: actions/upload-artifact@v4
         with:
-          name: Anchor-RTP-Bot
+          name: AnchorRtpBot
           path: build/libs/*.jar
